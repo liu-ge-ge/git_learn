@@ -19,32 +19,37 @@
 - Respository (仓库)
   > 在Git缓存区的代码，都可以提交到Git仓库进行托管
 
+![Alt text](image-2.png)
 ## 常用命令
 
 ```shell
-git config --list 查看配置信息
-git config --global user.name 查看全局的username
-git config --global user.email 邮箱配置
-git --help 查看git的所有命令
+git config --list  #查看配置信息
+git config --global user.name  #查看全局的username
+git config --global user.email  #邮箱配置
+git --help  #查看git的所有命令
 
 ==================本地仓库的初始化==================
-1. git clone ... 将github上的存储库clone到一个新目录
-2. git init      创建一个空的Git存储库或重新初始化一个现有的Git存储库
+1. git clone ... #将github上的存储库clone到一个新目录
+2. git init      #创建一个空的Git存储库或重新初始化一个现有的Git存储库
 
 =============将工作区文件添加到git缓存区=============
-1. git status 查看本地文件的修改和添加
-2. git add . / 文件名称  将本地修改/添加的所有文件添加到缓存区
+
+1. git status #查看本地文件的修改和添加
+2. git add . / 文件名称  #将本地修改/添加的所有文件添加到缓存区
 
 ==============将缓存区文件提交到版本库中=============
 git commit -m "提交信息"
 
 =======================提交记录=====================
-git log
+git log  #查看提交记录
 
+=====================查看版本差异===================
+git diff 版本id 1   版本id 2
+
+=====================提交到远程仓库===================
+git push -u origin 分支名称 #第一次用一次就行以后直接 (git push)
 
 ```
-这个是在github 创建好仓库后需要连接到远程仓库
-![Alt text](image.png)
 
 ## git init 初始化本地仓库
 ```shell
@@ -55,3 +60,18 @@ git remote add origin ... # （ 添加远程仓库镜像 ）
 git push -u origin main  #（ 就是把本地仓库提交到远程仓库的main分支下 ）
 ```
 
+## 分支
+
+**Git** 通过保存一系列不同时刻的文件快照，来记录文件在不同时刻的差异。git的分支本质上是指向提交对象的可变指针。git的默认分支是master。
+
+**Git**demaster分支并不是一个特殊分支，跟其它分支完全没有区别，之所以几乎每一个仓库都有master分支，是因为git init 命令默认创建它
+
+不同的开发团队的分支管理规范不一样，但基本上原理是相同的。
+
+![Alt text](image-3.png)
+
+**Master** : 这里master主分支，master分支记录重大版本更新
+
+**Develop** : 这里值develp开发分支,从master分支创建,变动比较大，通常待上线的功能合并到这个分支
+
+**Feature** ： 这里指feature功能分支，从develop分支创建，在这类分支上去开发新的功能，开发功能的时候，这个功能属于哪个目标发型版本还不知道，功能如果一直在开发，对应的这个功能分支就可以一直存在，待上线的时候合并到develop分支上，进行功能测试。如果不想要开发这个功能了，可以直接扔掉它。
