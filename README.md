@@ -25,15 +25,26 @@
 git config --list 查看配置信息
 git config --global user.name 查看全局的username
 git config --global user.email 邮箱配置
+git --help 查看git的所有命令
+
+==================本地仓库的初始化==================
+1. git clone ... 将github上的存储库clone到一个新目录
+2. git init      创建一个空的Git存储库或重新初始化一个现有的Git存储库
+
+=============将工作区文件添加到git缓存区=============
+1. git status 查看本地文件的修改和添加
+2. git add . / 文件名称  将本地修改/添加的所有文件添加到缓存区
+
+==============将缓存区文件提交到版本库中=============
 
 ```
 这个是在github 创建好仓库后需要连接到远程仓库
 ![Alt text](image.png)
 
-## 初始化本地仓库
+## git init 初始化本地仓库
 ```shell
 git init     #( 初始化本地仓库 )
-git add .    #( 提交修改 到缓存区 )
+git add .    #( 提交所有修改 到缓存区 )
 git commit -m "修改" #（ 提交到本地仓库 ）
 git remote add origin ... # （ 添加远程仓库镜像 ）
 git push -u origin main  #（ 就是把本地仓库提交到远程仓库的main分支下 ）
