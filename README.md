@@ -103,3 +103,9 @@ git pull <远程主机> <远程分支>:<本地分支名> #可以用这一个命�
 
 ## 分支合并
 
+当你在feature的某一个分支里面把功能写完了，但是develop 里面还没有这个时候就需要你在develop分支将feature修改的分支提交后进行合并。
+
+```shell
+=============分支合并==============
+git merge xxx #先去到你想要合并的分支比如develop ,然后合并feature xxx就是 feature
+```
